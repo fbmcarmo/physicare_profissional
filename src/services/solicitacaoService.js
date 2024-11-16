@@ -16,7 +16,16 @@ export const solicitarApoio = async (profissionalId) => {
 // Aceitar uma solicitação de apoio
 export const aceitarSolicitacao = async (solicitacaoId) => {
   try {
-    const response = await api.put(`/solicitacoes/aceitar/${solicitacaoId}`);
+    const token = getTokenFromCookie(); // Obtemos o token do cookie
+    const response = await api.put(
+      `/solicitacoes/aceitar/${solicitacaoId}`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${token}`, // Inclui o token no cabeçalho
+        },
+      }
+    );
     return response.data;
   } catch (error) {
     console.error('Erro ao aceitar a solicitação:', error);
@@ -24,13 +33,21 @@ export const aceitarSolicitacao = async (solicitacaoId) => {
   }
 };
 
-// Rejeitar uma solicitação de apoio
 export const rejeitarSolicitacao = async (solicitacaoId) => {
   try {
-    const response = await api.put(`/solicitacoes/rejeitar/${solicitacaoId}`);
+    const token = getTokenFromCookie(); // Obtemos o token do cookie
+    const response = await api.put(
+      `/solicitacoes/rejeitar/${solicitacaoId}`,
+      {}, // corpo da requisição vazio, caso o backend precise de algo
+      {
+        headers: {
+          Authorization: `Bearer ${token}`, // Inclui o token no cabeçalho
+        },
+      }
+    );
     return response.data;
   } catch (error) {
-    console.error('Erro ao rejeitar a solicitação:', error);
+    console.error('Erro ao rejeitar a solicitação:', error.response || error.message);
     throw error;
   }
 };

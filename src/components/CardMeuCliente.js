@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/cardMeuCliente.css';
-import { finalizarContato } from '../services/solicitacaoService'; // Importa a função de finalizar contato
+import { aceitarSolicitacao, finalizarContato, rejeitarSolicitacao } from '../services/solicitacaoService';
 
 
 const CardMeuCliente = ({ solicitacao, cliente }) => {
@@ -22,6 +22,26 @@ const CardMeuCliente = ({ solicitacao, cliente }) => {
       alert('Erro ao finalizar o contato.');
     }
   };
+
+  const handleRejeitar = async () => {
+    try {
+      await rejeitarSolicitacao(solicitacao._id); // Chama a função do serviço
+      alert('Contato rejeitado com sucesso.');
+      window.location.reload(); // Recarrega a página
+    } catch (error) {
+      alert('Erro ao finalizar o contato.');
+    }
+  };
+
+  const handleAceitar = async () => {
+    try {
+      await aceitarSolicitacao(solicitacao._id); // Chama a função do serviço
+      alert('Contato aceito com sucesso.');
+      window.location.reload(); // Recarrega a página
+    } catch (error) {
+      alert('Erro ao finalizar o contato.');
+    }
+  };
   
 
   return (
@@ -33,12 +53,12 @@ const CardMeuCliente = ({ solicitacao, cliente }) => {
       <div className="buttons-container">
         {/* Botão de Aceitar */}
         {status === 'Pendente' && (
-          <button className="btn aceitar">Aceitar</button>
+          <button className="btn aceitar" onClick={handleAceitar}>Aceitar</button>
         )}
 
         {/* Botão de Rejeitar */}
         {status === 'Pendente' && (
-          <button className="btn rejeitar">Rejeitar</button>
+          <button className="btn rejeitar" onClick={handleRejeitar}>Rejeitar</button>
         )}
 
         {/* Botões adicionais se a solicitação for aceita */}
