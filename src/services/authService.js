@@ -29,6 +29,17 @@ export const login = async (email, password) => {
   }
 };
 
+
+export const cadastro = async (userData) => {
+  try {
+    const response = await api.post('/profissionais/register', userData);
+    return response.data;
+  } catch (error) {
+    const errorMessage = error.response?.data?.error || error.message || "Não foi possível concluir o cadastro. Tente novamente.";
+    throw new Error(errorMessage);
+  }
+};
+
 // Função para realizar o logout
 export const logout = () => {
   // Remove o token do cookie

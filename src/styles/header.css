@@ -1,48 +1,62 @@
-/* header.css */
 .header-container {
-    position: fixed; /* Fixa o Header no topo da tela */
-    top: 0;
-    left: 0;
-    width: 100%; /* Ocupa toda a largura da tela */
-    background-color: #2575fc;
-    padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* Garante que o Header esteja acima de outros elementos */
-  }
-  
-  .header-nav {
-    display: flex;
-    justify-content: center; /* Centraliza os itens do menu horizontalmente */
-    align-items: center; /* Alinha os itens verticalmente */
-  }
-  
-  .header-menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px; /* Espaçamento entre os itens */
-  }
-  
-  .header-menu li {
-    position: relative;
-  }
-  
-  .header-menu a, .logout-button {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    transition: color 0.3s;
-  }
-  
-  .header-menu a:hover, .logout-button:hover {
-    color: #ffdd57; /* Cor de destaque ao passar o mouse */
-  }
-  
-  .logout-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
+  position: fixed; /* Fixa o header no topo */
+  top: 0;
+  left: 0;
+  width: 100%; /* Ocupa toda a largura da tela */
+  background-color: #2575fc; /* Cor de fundo do header */
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Garante que o header esteja acima dos outros elementos */
+}
+
+/* Navegação no Header */
+.header-nav {
+  display: flex;
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  align-items: center; /* Alinha os itens verticalmente */
+}
+
+/* Lista do Menu */
+.header-menu {
+  list-style: none; /* Remove os marcadores da lista */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Exibe os itens lado a lado */
+  gap: 20px; /* Espaçamento entre os itens */
+}
+
+/* Estilização padrão dos links */
+.header-menu li a {
+  color: #fff; /* Cor padrão do texto */
+  text-decoration: none; /* Remove sublinhado dos links */
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s; /* Animação ao passar o mouse */
+}
+
+/* Efeito hover nos links */
+.header-menu li a:hover {
+  color: #ffdd57; /* Cor ao passar o mouse */
+}
+
+/* Estilização do botão de logout */
+.logout-button {
+  background: none; /* Remove fundo do botão */
+  border: none; /* Remove borda */
+  color: #fff; /* Cor do texto */
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s; /* Animação ao passar o mouse */
+}
+
+/* Efeito hover no botão de logout */
+.logout-button:hover {
+  color: #ff4d4d; /* Cor de destaque ao passar o mouse */
+}
+
+/* Estilização do item ativo */
+.header-menu .active a {
+  color: #ffdd57; /* Cor de destaque para o item ativo */
+  text-decoration: underline; /* (Opcional) Sublinha o item ativo */
+  font-weight: bolder; /* (Opcional) Aumenta o destaque do texto */
+}
