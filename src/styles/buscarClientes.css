@@ -1,0 +1,69 @@
+.buscar-clientes-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-top: 80px; /* Espaço para o Header */
+  }
+  
+  /* Título da página */
+  .buscar-clientes-container h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Lista de clientes */
+  .clientes-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adiciona grid responsivo */
+    gap: 20px;
+    justify-content: center;
+    padding: 20px; /* Espaçamento interno */
+    margin-top: 20px; /* Espaçamento superior */
+  }
+  
+  /* Mensagem de erro */
+  .error-message {
+    color: #f44336;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* CSS do CardCliente */
+  .card-cliente {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    min-width: 250px;
+    max-width: 300px; /* Garante que o card não ultrapasse a largura */
+  }
+  
+  .card-cliente h3 {
+    font-size: 22px;
+    color: #333;
+  }
+  
+  .card-cliente p {
+    font-size: 16px;
+    color: #666;
+    margin: 5px 0;
+  }
+  
+  .card-cliente .client-info {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .card-cliente .client-info span {
+    font-weight: bold;
+  }

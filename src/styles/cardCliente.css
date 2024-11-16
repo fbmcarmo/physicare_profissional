@@ -1,0 +1,33 @@
+.card-cliente {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    min-width: 250px;
+    max-width: 300px; 
+    margin: 10px auto;
+  }
+  
+  .card-cliente h3 {
+    font-size: 22px;
+    color: #333;
+  }
+  
+  .card-cliente p {
+    font-size: 16px;
+    color: #666;
+    margin: 5px 0;
+  }
+  
+  .card-cliente .client-info {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .card-cliente .client-info span {
+    font-weight: bold;
+  }
