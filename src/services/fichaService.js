@@ -38,3 +38,13 @@ export const fetchMinhasFichasProfissionais = async (profissionalId) => {
     throw error;
   }
 };
+
+export const editarFicha = async (fichaId, dadosAtualizados) => {
+  try {
+    const response = await api.put(`/fichas/${fichaId}`, dadosAtualizados);
+    return response.data;
+  } catch (error) {
+    console.error('Erro ao editar ficha:', error);
+    throw error;
+  }
+};
