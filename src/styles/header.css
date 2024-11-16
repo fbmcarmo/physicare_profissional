@@ -1,0 +1,48 @@
+/* header.css */
+.header-container {
+    position: fixed; /* Fixa o Header no topo da tela */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa toda a largura da tela */
+    background-color: #2575fc;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Garante que o Header esteja acima de outros elementos */
+  }
+  
+  .header-nav {
+    display: flex;
+    justify-content: center; /* Centraliza os itens do menu horizontalmente */
+    align-items: center; /* Alinha os itens verticalmente */
+  }
+  
+  .header-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Espaçamento entre os itens */
+  }
+  
+  .header-menu li {
+    position: relative;
+  }
+  
+  .header-menu a, .logout-button {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  .header-menu a:hover, .logout-button:hover {
+    color: #ffdd57; /* Cor de destaque ao passar o mouse */
+  }
+  
+  .logout-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
