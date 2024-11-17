@@ -6,6 +6,7 @@ import BuscarClientes from './pages/buscar-clientes';
 import MeusClientes from './pages/meus-clientes';
 import MinhaConta from './pages/minha-conta';
 import Cadastro from './pages/cadastro';
+import EditarFicha from './pages/editar-ficha';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/buscar-clientes" element={<BuscarClientes />} />
         <Route path="/meus-clientes" element={<MeusClientes />} />
         <Route path="/minha-conta" element={<MinhaConta />} />
+        <Route path="/editar-ficha/:id" element={<EditarFicha />} />
       </Routes>
     </Router>
   );
